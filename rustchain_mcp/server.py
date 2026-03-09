@@ -100,6 +100,25 @@ def rustchain_miners() -> dict:
 
 
 @mcp.tool()
+def rustchain_create_wallet(agent_name: str) -> dict:
+    """Create a new RTC wallet for an AI agent. Zero friction onboarding.
+
+    Args:
+        agent_name: Name for the agent wallet (e.g., "my-crewai-agent").
+                    Will be slugified to create the wallet ID.
+
+    Returns wallet ID and balance. If the wallet already exists,
+    returns the existing wallet info. No authentication required.
+    """
+    r = get_client().post(
+        f"{RUSTCHAIN_NODE}/wallet/create",
+        json={"agent_name": agent_name},
+    )
+    r.raise_for_status()
+    return r.json()
+
+
+@mcp.tool()
 def rustchain_balance(wallet_id: str) -> dict:
     """Check RTC token balance for a wallet.
 
