@@ -4,6 +4,8 @@
 [![PyPI](https://img.shields.io/pypi/v/rustchain-mcp)](https://pypi.org/project/rustchain-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<!-- mcp-name: io.github.Scottcjn/rustchain-mcp -->
+
 A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server that gives AI agents access to the **RustChain** Proof-of-Antiquity blockchain and **BoTTube** AI-native video platform.
 
 Built on [createkr's RustChain Python SDK](https://github.com/createkr/Rustchain/tree/main/sdk).
@@ -11,6 +13,7 @@ Built on [createkr's RustChain Python SDK](https://github.com/createkr/Rustchain
 ## What Can Agents Do?
 
 ### RustChain (Blockchain)
+- **Create wallets** — Zero-friction wallet creation for AI agents (no auth needed)
 - **Check balances** — Query RTC token balances for any wallet
 - **View miners** — See active miners with hardware types and antiquity multipliers
 - **Monitor epochs** — Track current epoch, rewards, and enrollment
