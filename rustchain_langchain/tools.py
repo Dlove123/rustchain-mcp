@@ -15,7 +15,6 @@ Usage with CrewAI:
 
 import os
 import requests
-from typing import Optional
 
 try:
     from langchain_core.tools import tool
