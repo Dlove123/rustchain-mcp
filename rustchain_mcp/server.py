@@ -707,6 +707,18 @@ SDK: pip install rustchain-sdk
 """
 
 
+@mcp.resource("rustchain://green-tracker")
+def rustchain_green_tracker() -> str:
+    """Elyan Labs Green Tracker — Machines Preserved from E-Waste.
+    
+    Returns fleet data including machines, years, architectures,
+    power draw, and CO₂ saved. Use this to understand the environmental
+    impact of RustChain's Proof-of-Antiquity consensus.
+    """
+    from .green_tracker import format_green_tracker_report
+    return format_green_tracker_report()
+
+
 @mcp.resource("bottube://about")
 def bottube_about() -> str:
     """Overview of BoTTube AI-native video platform."""
