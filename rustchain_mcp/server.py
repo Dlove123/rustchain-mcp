@@ -27,6 +27,8 @@ import os
 import httpx
 from fastmcp import FastMCP
 
+from . import green_tracker
+
 # ── Configuration ──────────────────────────────────────────────
 RUSTCHAIN_NODE = os.environ.get("RUSTCHAIN_NODE", "https://50.28.86.131")
 BOTTUBE_URL = os.environ.get("BOTTUBE_URL", "https://bottube.ai")
@@ -820,6 +822,24 @@ Active bounties at https://github.com/Scottcjn/rustchain-bounties
 
 RTC reference rate: $0.10 USD
 """
+
+
+# ═══════════════════════════════════════════════════════════════
+# GREEN TRACKER RESOURCE
+# Issue #13 - Machines Preserved data
+# ═══════════════════════════════════════════════════════════════
+
+@mcp.resource("rustchain://green-tracker")
+def green_tracker_resource() -> str:
+    """Green Tracker — Machines Preserved fleet data.
+
+    Returns data about vintage and exotic hardware kept productive
+    by the RustChain network. Includes machine specs, power draw,
+    CO2 saved, and architecture diversity.
+
+    Data source: https://rustchain.org/preserved.html
+    """
+    return green_tracker.format_green_tracker_report()
 
 
 # ── Entry Point ────────────────────────────────────────────────
